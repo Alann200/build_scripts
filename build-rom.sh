@@ -42,6 +42,7 @@ fi
 
 # Setting up the environment
 source build/envsetup.sh
+breakfast ${DEVICE}
 
 # Setting up the CCache
 if [ "$CCACHE" == "--ccache" ]
@@ -56,9 +57,9 @@ breakfast ${DEVICE}-userdebug
 # Building the ROM
 if [ "$LOG" == "--log" ]
 then
-  mka bacon 2>&1 | tee ${OUT_LOG}
+  brunch ${DEVICE} 2>&1 | tee ${OUT_LOG}
 else
-  mka bacon
+  brunch ${DEVICE}
 fi
 
 # Checking if the build was successful
