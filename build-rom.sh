@@ -52,7 +52,7 @@ then
 fi
 
 # Setting the device
-breakfast ${DEVICE}-userdebug
+breakfast ${DEVICE}
 
 # Building the ROM
 if [ "$LOG" == "--log" ]
