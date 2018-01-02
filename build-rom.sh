@@ -39,6 +39,7 @@ if [ -d "$HOME/bin" ]
 then
   PATH="$HOME/bin:$PATH"
 else
+  mkdir -p ~/bin
   curl https://storage.googleapis.com/git-repo-downloads/repo > ~/bin/repo
   chmod a+x ~/bin/repo
   PATH="$HOME/bin:$PATH"
