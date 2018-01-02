@@ -34,6 +34,22 @@ export OUT_MD5="*${DEVICE}*.md5sum"
 export OUT_LOG="rom-${DEVICE}-$(date +%Y%m%d-%H%M).log"
 export OUT_PATH="out/target/product/${DEVICE}"
 
+# Check the 'repo' presence
+if [ -d "$HOME/bin" ]
+then
+  PATH="$HOME/bin:$PATH"
+else
+  curl https://storage.googleapis.com/git-repo-downloads/repo > ~/bin/repo
+  chmod a+x ~/bin/repo
+  PATH="$HOME/bin:$PATH"
+fi
+
+# Allocate sufficient RAM amount for Jack compiler
+# In our case it's 4GB
+export ANDROID_JACK_VM_ARGS="-Dfile.encoding=UTF-8 -XX:+TieredCompilation -Xmx4G"
+jack-admin kill-server
+jack-admin start-server
+
 # Clean build
 if [ "$CLEAN" == "--clean" ]
 then
