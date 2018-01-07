@@ -46,10 +46,10 @@ else
 fi
 
 # Allocate sufficient RAM amount for Jack compiler
-# In our case it's 4GB
-export ANDROID_JACK_VM_ARGS="-Dfile.encoding=UTF-8 -XX:+TieredCompilation -Xmx4G"
-jack-admin kill-server
-jack-admin start-server
+# In our case it's 8GB
+export ANDROID_JACK_VM_ARGS="-Dfile.encoding=UTF-8 -XX:+TieredCompilation -Xmx8G"
+./prebuilts/sdk/tools/jack-admin kill-server
+./prebuilts/sdk/tools/jack-admin start-server
 
 # Clean build
 if [ "$CLEAN" == "--clean" ]
