@@ -59,7 +59,6 @@ fi
 
 # Setting up the environment
 source build/envsetup.sh
-breakfast ${DEVICE}
 
 # Setting up the CCache
 if [ "$CCACHE" == "--ccache" ]
