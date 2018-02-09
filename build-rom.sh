@@ -29,10 +29,10 @@ then
   exit 1
 fi
 
-export OUT_ZIP="*${DEVICE}*.zip"
-export OUT_MD5="*${DEVICE}*.md5sum"
-export OUT_LOG="rom-${DEVICE}-$(date +%Y%m%d-%H%M).log"
+export OUT_LOG="rom-${DEVICE}-$(date +%Y%m%d).log"
 export OUT_PATH="out/target/product/${DEVICE}"
+export OUT_ZIP=$(find ${OUT_PATH} -name *${DEVICE}*.zip)
+export OUT_MD5=$(find ${OUT_PATH} -name *${DEVICE}*.md5sum)
 
 # Check the 'repo' presence
 if [ -d "$HOME/bin" ]
@@ -79,25 +79,22 @@ else
 fi
 
 # Checking if the build was successful
-cd ${OUT_PATH}
-if [ -f "${OUT_ZIP}" ]
+if [ -f ${OUT_ZIP} ]
 then
-  cd ../../../..
   echo ""
   echo "******************************************************************************"
+  echo ""
   echo " The ROM has been successfuly built for device ${DEVICE}!"
   echo ""
-  echo " ROM path     : $OUT_PATH/${OUT_ZIP}"
-  echo " ROM Md5 path : $OUT_PATH/${OUT_MD5}"
+  echo " ROM path     : ${OUT_ZIP}"
+  echo " ROM Md5 path : ${OUT_MD5}"
 
   if [ "$LOG" == "--log" ]
   then
-    echo " Build log                : ${OUT_LOG}"
-    echo ""
-  else
-    echo ""
+    echo " Build log    : ${OUT_LOG}"
   fi
-
+  
+  echo ""
   echo "******************************************************************************"
   echo ""
 else
