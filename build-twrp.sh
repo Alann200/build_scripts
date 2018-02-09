@@ -62,6 +62,7 @@ then
   cd ../../../..
   echo ""
   echo "******************************************************************************"
+  echo ""
   echo " TeamWin Recovery ${VERSION} has been successfuly built for device ${DEVICE}!"
   echo ""
   echo " TeamWin Recovery version : ${VERSION}"
@@ -70,11 +71,9 @@ then
   if [ "$LOG" == "--log" ]
   then
     echo " Build log                : ${OUT_LOG}"
-    echo ""
-  else
-    echo ""
   fi
-
+  
+  echo ""
   echo "******************************************************************************"
   echo ""
 else
