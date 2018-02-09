@@ -14,6 +14,7 @@
   
 * Misc. scripts
   * megatools-installer.sh - installs MEGA for uploading builds
+  * build-environment.sh - sets up the Linux Ubuntu 16.04 build environment
 
 ## Preparing scripts
 
@@ -43,9 +44,15 @@ bash build-rom.sh <device name> --log --clean --ccache
 bash build-twrp.sh <device name> --log --clean
 ```
 
+```sh
+bash build-environment.sh <github username> <your email>
+```
+
 ## Options
 
 * `--log` (saves a log file of the current build process) | `--nolog` (does the opposite)
 * `--ccache` (enables CCache to speed up building) | `--noccache` (does the opposite)
 * `<device name>` (tells the compiler which device we want to build for)
 * `--clean` (performs a clean build) | `--noclean` (does the opposite)
+* `<github username>` (your GitHub username)
+* `<your email>` (E-mail you used for registering to GitHub)
