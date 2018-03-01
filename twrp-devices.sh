@@ -150,6 +150,11 @@ export BRAND="infinix"
 export DEVICE="Infinix_X509"
 bash twrp-all.sh
 
+# Acer One 7
+export BRAND="acer"
+export DEVICE="elink8321_tb_m"
+bash twrp-all.sh
+
 # Count all build errors from the "tmp" directory
 cd tmp
 export ERROR_COUNT=$(ls -A | wc -l)
