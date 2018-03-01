@@ -29,10 +29,21 @@ cd MEGA
 ./configure
 make
 sudo make install
+touch ~/.megarc
+read -p "Do you have Mega account already?: (Yes or No)" Input
+if [ "$Input" = Yes ]
+then
 echo [Login] >> ~/.megarc
-echo Username = your@email >> ~/.megarc
-echo Password = yourpassword >> ~/.megarc
-nano ~/.megarc
+read -p "Enter Your Email: " EMAIL
+echo Username = $EMAIL >> ~/.megarc
+read -p "Enter Your Password: " Password
+echo Password = $Password >> ~/.megarc
 cd ~
 clear && clear scrollback
 echo MEGA is now fully set-up on your Linux computer
+fi
+
+if [ "$Input" = No ]
+then
+echo Make an Mega Account! Link: https://mega.nz/register
+fi
