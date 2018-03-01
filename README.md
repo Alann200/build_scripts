@@ -9,12 +9,12 @@
 * Scripts in this repository
   * lpad-twrp.sh - builds TWRP for all Liquid Porting & Development devices using android-5.1 branch
   * build-rom.sh - builds a ROM for one particular device
-  * build-twrp.sh | lpad-twrp.sh - builds TWRP for one particular device
-  * lpad-devices.sh - set of device configurations for building TWRP for all LPAD devices
+  * build-twrp.sh | twrp-all.sh - builds TWRP for one particular device
+  * twrp-devices.sh - set of device configurations for building TWRP for all our devices
   
 * Misc. scripts
   * megatools-installer.sh - installs MEGA for uploading builds
-  * build-environment.sh - sets up the Linux Ubuntu 16.04 build environment
+  * build-environment.sh - sets up the Linux Ubuntu 16.04 (or later) build environment
 
 ## Preparing scripts
 
