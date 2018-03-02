@@ -7,7 +7,6 @@
 > of source you want to build from (a ROM or TWRP)
 
 * Scripts in this repository
-  * lpad-twrp.sh - builds TWRP for all Liquid Porting & Development devices using android-5.1 branch
   * build-rom.sh - builds a ROM for one particular device
   * build-twrp.sh | twrp-all.sh - builds TWRP for one particular device
   * twrp-devices.sh - set of device configurations for building TWRP for all our devices
@@ -24,26 +23,21 @@ Now we'll clone them and `cd` to them by running these commands:
 git clone https://github.com/hejsekvojtech/build_scripts.git
 cd build_scripts
 ```
-And then just copy any script you want to the root of a ROM or TWRP source you'll be building from.
+And then just copy build and scripts folder to the root of a ROM or TWRP source you'll be building from.
 
 ## Starting scripts
 
-Once your choosen and configured script is placed into the root of required source, execute it by:
+Once your choose what you want to do! then just into the root of required source, execute it by:
 
-```sh
-bash <script name>.sh <option>
+```
+./build
 ```
 
 ### Examples
 
-```sh
-bash build-rom.sh <device name> --log --clean --ccache
 ```
-
-```sh
-bash build-twrp.sh <device name> --log --clean
+./build and type help for help
 ```
-
 ```sh
 bash build-environment.sh <github username> <your email>
 ```
